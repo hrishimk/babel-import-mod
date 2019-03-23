@@ -1,11 +1,8 @@
 const fs = require('fs');
 const Path = require('path');
-//import * as babel from '@babel/core';
 const babel = require('@babel/core');
-//import traverse from "@babel/traverse";
 const traverse = require('@babel/traverse').default;
 const generate = require('@babel/generator').default;
-const parser = require('@babel/parser');
 const types = require('@babel/types');
 
 module.exports = function MyPlugin(ref) {
@@ -35,10 +32,8 @@ module.exports = function MyPlugin(ref) {
                     handle_export(xpath);
                 }
             });
-            //return ast;
             path.replaceWith(ast);
         } else {
-            console.log('fname has sepc', fname);
             traverse(ast, {
                 ImportDeclaration: function (ipath) {
                     path_check(ipath);
@@ -47,7 +42,6 @@ module.exports = function MyPlugin(ref) {
                     let imports = [];
                     for (let i = 0, q = specifiers.length; i < q; i++) {
                         let s = specifiers[i];
-                        //console.log('sepcifier', s);
                         let node = ex_path.node;
                         if (node.declaration) {
                             if (node.declaration.id.name === s.imported.name) {
@@ -74,7 +68,6 @@ module.exports = function MyPlugin(ref) {
             path.replaceWith(ast);
         }
         const output = generate(path);
-        //console.log(fname, output);
     }
 
     function handle_export(path, imports) {
