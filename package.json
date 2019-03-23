@@ -1,0 +1,35 @@
+{
+  "name": "babel-import-mod",
+  "version": "0.1.0",
+  "description": "Bundle imports to single file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrishimk/babel-import-mod.git"
+  },
+  "keywords": [
+    "babel",
+    "import",
+    "bundle"
+  ],
+  "author": "hrishi <hrishikesh.mk1@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hrishimk/babel-import-mod/issues"
+  },
+  "homepage": "https://github.com/hrishimk/babel-import-mod#readme",
+  "dependencies": {
+    "@babel/generator": "^7.4.0",
+    "@babel/parser": "^7.4.2",
+    "@babel/plugin-transform-modules-umd": "^7.2.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/traverse": "^7.4.0",
+    "@babel/types": "^7.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0"
+  }
+}
